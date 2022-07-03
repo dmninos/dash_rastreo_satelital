@@ -11,7 +11,7 @@ map_layout = map_coords.map_layout
 
 router =  Route()
 
-register_page(__name__)
+register_page(__name__, path="coord")
 
 layout = dbc.Container(
     [
