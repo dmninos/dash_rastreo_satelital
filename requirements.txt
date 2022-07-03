@@ -1,6 +1,11 @@
 dash
-jupyter-dash
+osmnx
 pandas
 gunicorn
+pyprojroot
+jupyter-dash
+scikit-learn
 dash-labs
+dash-leaflet
+dash-extensions
 dash-bootstrap-components

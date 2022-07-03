@@ -3,19 +3,20 @@ import dash_labs as dl
 import dash_bootstrap_components as dbc
 import os
 
+from dash import Input, Output
 from callbacks import register_callbacks
 
 
 request_path_prefix = "/"
 
-#only for workspace in DS4A
-workspace_user = os.getenv('JUPYTERHUB_USER')  # Get DS4A Workspace user name
-if workspace_user:
-    request_path_prefix = '/user/' + workspace_user + '/proxy/8050/'
+# #only for workspace in DS4A
+# workspace_user = os.getenv('JUPYTERHUB_USER')  # Get DS4A Workspace user name
+# if workspace_user:
+#     request_path_prefix = '/user/' + workspace_user + '/proxy/8050/'
 
     
 # Dash instance declaration
-app = dash.Dash(__name__, plugins=[dl.plugins.pages], requests_pathname_prefix=request_path_prefix, external_stylesheets=[dbc.themes.FLATLY],)
+app = dash.Dash(__name__, plugins=[dl.plugins.pages], requests_pathname_prefix=request_path_prefix, external_stylesheets=[dbc.themes.FLATLY], prevent_initial_callbacks=True)
 
 
 #Top menu, items get from all pages registered with plugin.pages
@@ -49,7 +50,7 @@ app.layout = dbc.Container(
 )
 
 # Call to external function to register all callbacks
-register_callbacks(app)
+# register_callbacks(app)
 
 # This call will be used with Gunicorn server
 server = app.server
