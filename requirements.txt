@@ -1,5 +1,6 @@
 dash
 jupyter-dash
 pandas
+gunicorn
 dash-labs
 dash-bootstrap-components
