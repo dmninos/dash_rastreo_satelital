@@ -1,9 +1,13 @@
 FROM python:3.9-slim
 
-COPY requirements.txt ./
+RUN     ["mkdir", "-p", "/usr/src/webapp"]
 
-RUN pip install -r requirements.txt
+WORKDIR /usr/src/webapp
 
-COPY . .
+COPY    ["requirements.txt","."]
 
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:server
+RUN     ["pip", "install", "-r", "requirements.txt"]
+
+COPY    [".","."]
+
+CMD     [ "python3", "app.py" ]

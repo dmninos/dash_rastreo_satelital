@@ -14,6 +14,7 @@ class Route:
             self.G = ox.io.load_graphml(GRAPH_DATA)
         else:
             self.G = ox.graph_from_place(self.__place, network_type='drive')
+            ox.save_graphml(self.G, GRAPH_DATA)
 
     def get_route(self, start, end):
         origin = ox.nearest_nodes(self.G, start[1], start[0])

@@ -1,7 +1,14 @@
-.csv
-venv/
-__pycache__/
 .idea/
+
+# ENVIRONMENT
+venv/
+.env
+
+# CACHE
+__pycache__/
+cache/
+
+# DATA
 *.csv
 *.json
-
+*.graphml
