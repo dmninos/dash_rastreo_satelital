@@ -1,5 +1,7 @@
 .csv
 venv/
 __pycache__/
-
+.idea/
+*.csv
+*.json
 
