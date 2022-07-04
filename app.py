@@ -4,7 +4,6 @@ import dash_bootstrap_components as dbc
 import os
 
 from dash import Input, Output
-from callbacks import register_callbacks
 
 
 request_path_prefix = "/"
@@ -48,9 +47,6 @@ app.layout = dbc.Container(
     className="dbc",
     fluid=True,
 )
-
-# Call to external function to register all callbacks
-# register_callbacks(app)
 
 # This call will be used with Gunicorn server
 server = app.server

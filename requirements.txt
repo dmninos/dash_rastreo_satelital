@@ -7,5 +7,7 @@ jupyter-dash
 scikit-learn
 dash-labs
 dash-leaflet
+dash-iconify
 dash-extensions
+dash-mantine-components
 dash-bootstrap-components
