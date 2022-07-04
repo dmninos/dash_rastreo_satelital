@@ -1,9 +1,9 @@
 FROM python:3.9-slim
 
-COPY . .
+COPY requirements.txt ./
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8050
+COPY . .
 
-CMD ["python", "app.py"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:server

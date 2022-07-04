@@ -60,25 +60,25 @@ def drawer_demo(n_clicks):
 @callback(
     Output("origin", "position"),
     Output("origin", "children"),
-    Input(map_coords.id, "click_lat_lng"),
+    Input(map_coords.id, "dbl_click_lat_lng"),
     prevent_initial_call=True,
 )
-def map_click(click_lat_lng):
-    children = "orgin: ({:.3f}, {:.3f})".format(*click_lat_lng)
+def map_click(dbl_click_lat_lng):
+    children = "orgin: ({:.3f}, {:.3f})".format(*dbl_click_lat_lng)
     tooltip = dl.Tooltip(children)
-    return click_lat_lng, tooltip
+    return dbl_click_lat_lng, tooltip
 
 
 @callback(
     Output("destination", "position"),
     Output("destination", "children"),
-    Input(map_coords.id, "dbl_click_lat_lng"),
+    Input(map_coords.id, "click_lat_lng"),
     prevent_initial_call=True,
 )
-def map_dblclick(dbl_click_lat_lng):
-    children = "dest: ({:.3f}, {:.3f})".format(*dbl_click_lat_lng)
+def map_dblclick(click_lat_lng):
+    children = "dest: ({:.3f}, {:.3f})".format(*click_lat_lng)
     tooltip = dl.Tooltip(children)
-    return dbl_click_lat_lng, tooltip
+    return click_lat_lng, tooltip
 
 
 @callback(
@@ -91,7 +91,5 @@ def map_dblclick(dbl_click_lat_lng):
     prevent_initial_call=True,
 )
 def show_coords(n_clicks, start, end, date_range):
-    print("coordinates: ", start, end)
     coordinates = route_maker.coordinates(start, end)
-    print("done")
     return coordinates, no_update
