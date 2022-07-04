@@ -15,7 +15,7 @@ if workspace_user:
 
     
 # Dash instance declaration
-app = dash.Dash(__name__, plugins=[dl.plugins.pages], requests_pathname_prefix=request_path_prefix, external_stylesheets=[dbc.themes.FLATLY],)
+app = dash.Dash(__name__, plugins=[dl.plugins.pages], requests_pathname_prefix=request_path_prefix, external_stylesheets=[dbc.themes.LUX],)
 
 
 #Top menu, items get from all pages registered with plugin.pages

@@ -36,6 +36,7 @@ class table:
                                     data = self.data.to_dict('records'),
                                     filter_action="native",
                                     sort_action="native",
+                                    sort_by=[{'column_id': 'SPEED', 'direction': 'desc'}],
                                     style_cell_conditional=[
                                          {
                                              'if': {'column_id': c},
