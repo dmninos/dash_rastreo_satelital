@@ -4,7 +4,7 @@ import pandas as pd
 
 # df_opsales = pd.read_csv('./data/dfsample/opsales.csv')
 
-df_markers = pd.read_csv('./data/dfsample/table_top_speed.csv')
+df_table_speed = pd.read_csv('./data/dfsample/table_top_speed.csv')
 
 # df_table_top_speed = pd.read_csv('table_top_speed.csv', engine='pyarrow')
 # dataset de prueba para el mapa
