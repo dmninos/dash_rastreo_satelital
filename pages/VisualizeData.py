@@ -86,7 +86,7 @@ def create_selection(days, hours):
             df.select((hour_min <= df.HOUR), mode='and')
             selection = True
         if hour_max < 23:
-            df.select((df.DAY <= hour_max), mode='and')
+            df.select((df.HOUR <= hour_max), mode='and')
             selection = True
     if (len(days) > 0) & (len(days) < 7):
         df.select(df.DAY.isin(days), mode='and')

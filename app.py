@@ -10,7 +10,7 @@ app = dash.Dash(__name__, plugins=[dl.plugins.pages], requests_pathname_prefix=r
     
 # Top menu, items get from all pages registered with plugin.pages
 navbar = dbc.NavbarSimple([
-    dbc.NavItem(dbc.NavLink("Inicio", href=request_path_prefix)),
+    dbc.NavItem(dbc.NavLink("Home", href=request_path_prefix)),
     dbc.DropdownMenu(
         [
             dbc.DropdownMenuItem(page["name"], href=request_path_prefix + page["path"])
@@ -20,7 +20,7 @@ navbar = dbc.NavbarSimple([
         nav=True,
         label="Data Science",
     ),
-    dbc.NavItem(dbc.NavLink("Nosotros", href=request_path_prefix + "nosotros")),
+    dbc.NavItem(dbc.NavLink("Contact", href=request_path_prefix + "contact")),
 ],
     brand="DS4A Project - Team 56",
     color="primary",
